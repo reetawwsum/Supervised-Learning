@@ -1,6 +1,10 @@
 # Supervised-Learning
 Supervised Learning on various datasets
 
+##Datasets
+1. Iris
+2. Seeds (Wheat)
+
 ##How to solve Machine Learning problem
 
 1. Collect lot of data.
