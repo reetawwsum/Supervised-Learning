@@ -4,6 +4,7 @@ Supervised Learning on various datasets
 ##Datasets
 1. Iris
 2. Seeds (Wheat)
+3. Boston
 
 ##How to solve Machine Learning problem
 
