@@ -5,6 +5,7 @@ Supervised Learning on various datasets
 1. Iris
 2. Seeds (Wheat)
 3. Boston
+4. Handwritten Digits
 
 ##How to solve Machine Learning problem
 
