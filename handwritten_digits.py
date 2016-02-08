@@ -38,6 +38,7 @@ Observations during learning on (5 percent dataset):
 13. Winner! Learning Curve on 20 percent dataset is still going up.
 14. Saving the model on disk for future use.
 15. With full train.csv dataset, getting training score 99.9 percent and testing score of 95.8 percent. Also, saved the model on disk.
+16. Using Extra Tree Classifier, I'm able to reach 96.37 percent testing score.
 '''
 
 import numpy as np
@@ -74,11 +75,11 @@ y = digits['target']
 
 X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size=0.25, random_state=42)
 # '''
-clf = ensemble.RandomForestClassifier(n_estimators=34, n_jobs=-1)
+clf = ensemble.ExtraTreesClassifier(n_estimators=37, n_jobs=-1)
 clf.fit(X_train, y_train)
-joblib.dump(clf, 'datasets/digits/model/random_forest.pkl')
+joblib.dump(clf, 'datasets/digits/model/extra_trees.pkl')
 # '''
-# clf = joblib.load('datasets/digits/model/random_forest.pkl')
+# clf = joblib.load('datasets/digits/model/extra_trees.pkl')
 
 y_predict = clf.predict(X_test)
 
