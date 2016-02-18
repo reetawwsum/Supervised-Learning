@@ -39,6 +39,13 @@ Observations during learning on (5 percent dataset):
 14. Saving the model on disk for future use.
 15. With full train.csv dataset, getting training score 99.9 percent and testing score of 95.8 percent. Also, saved the model on disk.
 16. Using Extra Tree Classifier, I'm able to reach 96.37 percent testing score.
+17. Size of sample (# of features) is 784, so reducing the size of features to 10 percent (79). Performance is reduced to 86 percent. Perhaps with less feature size, my model is not generalising.
+18. Increasing the feature size by 40 percent of total. Performance increased to 96 percent.
+19. Lets make it to 50 percent of total because majorly my model is unable to classify among 4 and 9.
+20. Confusion between 4 and 9 is reduced to less than 10. But, overall performance remains the same.
+21. Performance decreased by going up to 55 percent of total feature count.
+22. 53 percent of total feature count seems to be having highest performance.
+23. Using 53 percent of total feature size, I'm still getting 96.28 percent testing score.
 '''
 
 import numpy as np
@@ -47,6 +54,7 @@ from sklearn import cross_validation
 from sklearn import ensemble
 from sklearn.externals import joblib
 from sklearn import metrics
+from sklearn import feature_selection
 from common.fn import *
 
 def load_digits(file_name, file_path = 'datasets/digits/', max_rows=None):
@@ -73,15 +81,20 @@ digits = load_digits('train.csv')
 X = digits['data']
 y = digits['target']
 
-X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size=0.25, random_state=42)
+X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size=0.10, random_state=42)
+
+selector = feature_selection.SelectPercentile(feature_selection.chi2, 53)
+selector.fit(X_train, y_train)
+X_train_reduced = selector.transform(X_train)
+X_test_reduced = selector.transform(X_test)
 # '''
 clf = ensemble.ExtraTreesClassifier(n_estimators=37, n_jobs=-1)
-clf.fit(X_train, y_train)
+clf.fit(X_train_reduced, y_train)
 joblib.dump(clf, 'datasets/digits/model/extra_trees.pkl')
 # '''
 # clf = joblib.load('datasets/digits/model/extra_trees.pkl')
 
-y_predict = clf.predict(X_test)
-
+print clf.score(X_test_reduced, y_test)
+exit()
 print metrics.classification_report(y_test, y_predict)
 print metrics.confusion_matrix(y_test, y_predict)
