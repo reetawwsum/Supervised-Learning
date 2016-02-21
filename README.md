@@ -8,6 +8,7 @@ Supervised Learning on various datasets
 4. Handwritten Digits
 5. Titanic
 6. Facial dataset (Kaggle)
+7. Abalone
 
 ## Licence
 The MIT License (MIT)
