@@ -1,0 +1,4 @@
+Observations & Experimentation
+==============================
+1. I have to convert all the features as well as target into numerical data, before doing anything.
+2. It's the case of skew target classes. I'll be better off doing precision-recall and confusion matrix for evaluation.
