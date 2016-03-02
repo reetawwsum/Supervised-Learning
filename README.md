@@ -10,6 +10,7 @@ Supervised Learning on various datasets
 6. Facial dataset (Kaggle)
 7. Abalone
 8. Badges
+9. Car Evaluation dataset
 
 ## Licence
 The MIT License (MIT)
