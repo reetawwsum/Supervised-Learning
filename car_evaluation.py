@@ -7,6 +7,9 @@ import numpy as np
 import csv
 from collections import Counter
 from sklearn import preprocessing
+from sklearn import cross_validation
+from sklearn import tree
+from sklearn import metrics
 
 def load_car_evaluation(file_path = 'datasets/car.data'):
 	car_evaluation = {}
@@ -59,4 +62,19 @@ car_evaluation = load_car_evaluation()
 X = car_evaluation['data']
 y = car_evaluation['target']
 
-print Counter(y)
+clf = tree.DecisionTreeClassifier()
+
+skf = cross_validation.StratifiedShuffleSplit(y, 2, test_size=0.10, random_state=42)
+
+for train_index, test_index in skf:
+
+	X_train, X_test = X[train_index], X[test_index]
+	y_train, y_test = y[train_index], y[test_index]
+
+	clf.fit(X_train, y_train)
+
+	y_predict = clf.predict(X_test)
+
+	print metrics.accuracy_score(y_test, y_predict)
+	print metrics.classification_report(y_test, y_predict)
+	print metrics.confusion_matrix(y_test, y_predict)
