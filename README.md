@@ -11,6 +11,7 @@ Supervised Learning on various datasets
 7. Abalone
 8. Badges
 9. Car Evaluation dataset
+10. Dermatology dataset
 
 ## Licence
 The MIT License (MIT)
