@@ -10,3 +10,5 @@ Observations & Experimentations
 7. Almost, every attribute has missing data.
 8. I thought of using attribute 13 as target feature, but due to large number of missing values, I better not use this.
 9. Such a messy dataset, even it's bugging numpy array.
+10. Removing entry with unknown target.
+11. Filling age feature with mean age.
