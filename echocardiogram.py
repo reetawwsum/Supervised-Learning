@@ -29,4 +29,15 @@ echocardiogram = load_echocardiogram()
 X = echocardiogram['data'][:, [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]]
 y = echocardiogram['data'][:, 1]
 
-# Clean the dataset before visualising
+# Removing entry with blank target
+valid_target = (y!='?')
+
+X = X[valid_target]
+y = y[valid_target]
+
+# Assigning mean age to missing ages
+ages = X[:, 1]
+mean_age = np.mean(X[ages != '?', 1].astype(float))
+X[ages == '?', 1] = mean_age
+
+print Counter(X[:, 2])
