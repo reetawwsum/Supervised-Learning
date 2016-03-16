@@ -12,6 +12,7 @@ Supervised Learning on various datasets
 8. Badges
 9. Car Evaluation dataset
 10. Dermatology dataset
+11. Echocardiogram (In process)
 
 ## Licence
 The MIT License (MIT)
