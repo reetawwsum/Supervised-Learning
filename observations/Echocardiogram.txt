@@ -12,3 +12,6 @@ Observations & Experimentations
 9. Such a messy dataset, even it's bugging numpy array.
 10. Removing entry with unknown target.
 11. Filling age feature with mean age.
+12. Before filling feature 5, let me visualise it first.
+13. No pattern as such in feature 5. Let me populate the missing features with mean once again.
+14. Literally so much missing data, I'm not happy with my current approach to fill up the missing features. 
