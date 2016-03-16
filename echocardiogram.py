@@ -7,6 +7,7 @@ Playing with Echocardiogram Dataset
 import csv
 import numpy as np
 from collections import Counter
+import matplotlib.pyplot as plt
 
 def load_echocardiogram(file_path = 'datasets/echocardiogram.data'):
 
@@ -40,4 +41,6 @@ ages = X[:, 1]
 mean_age = np.mean(X[ages != '?', 1].astype(float))
 X[ages == '?', 1] = mean_age
 
-print Counter(X[:, 2])
+indexes = X[:, 3]
+mean_value = np.mean(X[indexes != '?', 3].astype(float))
+X[indexes == '?', 3] = mean_value
