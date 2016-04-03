@@ -1,0 +1,7 @@
+Observations & Experimentations
+===============================
+
+1. Difficult to decide which feature to be considered as target value; hence, reading the data file as raw_data, and deciding later.
+2. Choosing religion(Attribute 7) of a country as a target value.
+3. Taking Attributes(8-30) as features for learning model.
+4. Converting color name into numeric value.
