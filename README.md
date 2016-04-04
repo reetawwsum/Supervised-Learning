@@ -13,6 +13,7 @@ Supervised Learning on various datasets
 9. Car Evaluation dataset
 10. Dermatology dataset
 11. Echocardiogram (In process)
+12. Flags dataset
 
 ## Licence
 The MIT License (MIT)
