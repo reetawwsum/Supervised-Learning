@@ -14,7 +14,7 @@ Supervised Learning on various datasets
 10. Dermatology dataset
 11. Echocardiogram (In process)
 12. Flags dataset
-13. NotMNIST dataset (Deep Neural Network)
+13. NotMNIST dataset (Deep Neural Network & Convnet)
 
 ## Licence
 The MIT License (MIT)
